@@ -17,7 +17,6 @@ import com.springframework.converters.ProductFormToProduct;
 import com.springframework.domain.Product;
 import com.springframework.repositories.ProductRepository;
 
-
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -28,18 +27,16 @@ public class ProductServiceImpl implements ProductService {
     private JmsTemplate jmsTemplate;
 
     @Autowired
-    public ProductServiceImpl(ProductRepository productRepository, ProductFormToProduct productFormToProduct,
-                              JmsTemplate jmsTemplate) {
+    public ProductServiceImpl(ProductRepository productRepository, ProductFormToProduct productFormToProduct, JmsTemplate jmsTemplate) {
         this.productRepository = productRepository;
         this.productFormToProduct = productFormToProduct;
         this.jmsTemplate = jmsTemplate;
     }
 
-
     @Override
     public List<Product> listAll() {
         List<Product> products = new ArrayList<>();
-        productRepository.findAll().forEach(products::add); //fun with Java 8
+        productRepository.findAll().forEach(products::add); // fun with Java 8
         return products;
     }
 

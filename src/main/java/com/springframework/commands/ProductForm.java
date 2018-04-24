@@ -1,8 +1,6 @@
 package com.springframework.commands;
 
-
 import java.math.BigDecimal;
-
 
 public class ProductForm {
     private Long id;
